@@ -1,0 +1,29 @@
+{
+  "name": "api_rest_escola",
+  "version": "1.0.0",
+  "description": "Será criado uma api rest referente a área de usuário/aluno onde poderá ser feita diversas solicitações e verificar dados pessoais.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "import": "node ./src/logica/importando.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunosa91/Escola-API-REST.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brunosa91/Escola-API-REST/issues"
+  },
+  "author": "Bruno Santana de Sá",
+  "license": "ISC",
+  "homepage": "https://github.com/brunosa91/Escola-API-REST#readme",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
