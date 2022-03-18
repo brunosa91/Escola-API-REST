@@ -15,3 +15,5 @@ class AlunoDao {
     });
   };
 }
+
+export default AlunoDao;
