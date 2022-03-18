@@ -1,8 +1,20 @@
 import Aluno from "../model/Aluno.js";
 
-const alunoController = (app) => {
+const alunoController = (app, bd) => {
+  const alunoModel = new Aluno(bd);
   app.get("/aluno", async (req, res) => {
-    await res.send("foi");
+    try {
+      const resposta = await alunoModel.buscaTodosAlunos();
+      res.status(200).json({
+        alunos: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.status(400).json({
+        mensagem: error.mensagem,
+        erro: true,
+      });
+    }
   });
   //
   app.get("/aluno/matricula/:matricula", async (req, res) => {
