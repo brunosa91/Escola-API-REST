@@ -21,7 +21,8 @@
   "homepage": "https://github.com/brunosa91/Escola-API-REST#readme",
   "type": "module",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
