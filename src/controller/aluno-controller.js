@@ -1,3 +1,5 @@
+import Aluno from "../model/Aluno.js";
+
 const alunoController = (app) => {
   app.get("/aluno", async (req, res) => {
     await res.send("foi");
