@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS "ALUNOS"(
 );`;
 
 const ADD_ALUNO_DATA = `
-INSERT INTO ALUNOS (ID, NOME,DATA_DE_NASCIMENTO, CPF, EMAIL, TELEFONE, TURMA, ANO, MATICULA, RESPONSAVEL, RUA, NUMERO, CEP, CIDADE, BAIRRO)
+INSERT INTO ALUNOS (ID, NOME,DATA_DE_NASCIMENTO, CPF, EMAIL, TELEFONE, TURMA, ANO, MATRICULA, RESPONSAVEL, RUA, NUMERO, CEP, CIDADE, BAIRRO)
 VALUES
 (1,'Carlos','16/11/2000','111.111.111-11','carlito@gmail.com','(11)11111-1111','manhã','9ª ano','1234','Olavo','napomuceno','123','00000-020','Guarulhos','seródio')`;
 
@@ -44,7 +44,8 @@ function criaTabelaAluno() {
 
 function populaTabelaAluno() {
   db.run(ADD_ALUNO_DATA, (error) => {
-    if (error) console.log("erro ao popular tabela de alunos");
+    if (error)
+      console.log(`${error.message}\n erro ao popular tabela de alunos`);
   });
 }
 
