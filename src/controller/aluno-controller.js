@@ -1,6 +1,6 @@
 const alunoController = (app) => {
-  app.get("/aluno", (req, res) => {
-    res.send("foi");
+  app.get("/aluno", async (req, res) => {
+    await res.send("foi");
   });
 };
 
