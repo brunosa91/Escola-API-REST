@@ -18,7 +18,19 @@ const alunoController = (app, bd) => {
   });
   //
   app.get("/aluno/matricula/:matricula", async (req, res) => {
-    await res.send("peguei matricula");
+    const matricula = req.params.matricula;
+    try {
+      const resposta = await alunoModel.buscaMatricula(matricula);
+      res.status(200).json({
+        alunos: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.status(400).json({
+        mensagem: error.mensagem,
+        erro: true,
+      });
+    }
   });
 
   app.post("/aluno", async (req, res) => {

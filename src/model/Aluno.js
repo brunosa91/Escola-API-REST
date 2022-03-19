@@ -13,6 +13,14 @@ class Aluno {
       throw new Error(error.mensagem);
     }
   };
+
+  buscaMatricula = async (matricula) => {
+    try {
+      return await this.dao.buscaMatricula(matricula);
+    } catch (error) {
+      throw new Error(error.mensagem);
+    }
+  };
 }
 
 export default Aluno;

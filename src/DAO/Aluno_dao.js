@@ -15,11 +15,11 @@ class AlunoDao {
     });
   };
 
-  buscaMatricula = (email) => {
+  buscaMatricula = (matricula) => {
     return new Promise((resolve, reject) => {
       this.db.all(
-        "SELECT * FROM ALUNOS WHERE MATRICULA = ?",
-        email,
+        "SELECT * FROM ALUNO WHERE MATRICULA = ?",
+        matricula,
         (error, rows) => {
           if (error) {
             reject(error);
