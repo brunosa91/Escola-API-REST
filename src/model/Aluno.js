@@ -18,7 +18,31 @@ class Aluno {
     try {
       return await this.dao.buscaMatricula(matricula);
     } catch (error) {
-      throw new Error(error.mensagem);
+      throw new Error(error.message);
+    }
+  };
+
+  insereDadosAluno = async (aluno) => {
+    try {
+      const novoAluno = new AlunoSchema(
+        aluno.nome,
+        aluno.dataDeNascimento,
+        aluno.cpf,
+        aluno.email,
+        aluno.telefone,
+        aluno.turma,
+        aluno.ano,
+        aluno.matricula,
+        aluno.responsavel,
+        aluno.rua,
+        aluno.numero,
+        aluno.cep,
+        aluno.cidade,
+        aluno.bairro
+      );
+      return await this.dao.insereDadosAluno(novoAluno);
+    } catch (error) {
+      throw new Error(error.message);
     }
   };
 }
