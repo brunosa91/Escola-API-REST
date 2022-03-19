@@ -66,6 +66,22 @@ const alunoController = (app, bd) => {
       });
     }
   });
+
+  app.delete("/aluno/id/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+      const resposta = await alunoModel.deletaAluno(id);
+      res.status(202).json({
+        message: resposta,
+        error: false,
+      });
+    } catch (error) {
+      res.status(400).json({
+        message: error.message,
+        error: true,
+      });
+    }
+  });
 };
 
 export default alunoController;

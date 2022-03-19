@@ -90,6 +90,17 @@ class AlunoDao {
       );
     });
   };
+  deletaAluno = (id) => {
+    return new Promise((resolve, reject) => {
+      this.db.run("DELETE FROM ALUNOS WHERE ID = ?", id, (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(`Aluno de ${id} foi deletado do sistema da escola`);
+        }
+      });
+    });
+  };
 }
 
 export default AlunoDao;

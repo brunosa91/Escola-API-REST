@@ -69,6 +69,13 @@ class Aluno {
       throw new Error(error.message);
     }
   };
+  deletaAluno = async (id) => {
+    try {
+      return await this.dao.deletaAluno(id);
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
 }
 
 export default Aluno;
