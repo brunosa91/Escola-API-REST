@@ -58,6 +58,38 @@ class AlunoDao {
       );
     });
   };
+
+  atualizaDadosAluno = (id, aluno) => {
+    return new Promise((resolve, reject) => {
+      this.db.run(
+        "UPDATE ALUNOS SET NOME = ?, DATA_DE_NASCIMENTO = ?, CPF = ?, EMAIL = ?, TELEFONE = ?, TURMA = ?, ANO = ?, MATRICULA = ?, RESPONSAVEL = ?, RUA = ?, NUMERO = ?, CEP = ?, CIDADE = ?, BAIRRO = ? WHERE ID = ? ",
+        aluno.nome,
+        aluno.dataDeNascimento,
+        aluno.cpf,
+        aluno.email,
+        aluno.telefone,
+        aluno.turma,
+        aluno.ano,
+        aluno.matricula,
+        aluno.responsavel,
+        aluno.rua,
+        aluno.numero,
+        aluno.cep,
+        aluno.cidade,
+        aluno.bairro,
+        id,
+        (error) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(
+              `Informações do aluno ${aluno.nome} foi atualizadas com sucesso`
+            );
+          }
+        }
+      );
+    });
+  };
 }
 
 export default AlunoDao;
