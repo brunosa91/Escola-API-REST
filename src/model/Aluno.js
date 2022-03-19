@@ -45,6 +45,30 @@ class Aluno {
       throw new Error(error.message);
     }
   };
+
+  atualizaDadosAluno = async (id, aluno) => {
+    try {
+      const atualizaAluno = new AlunoSchema(
+        aluno.nome,
+        aluno.dataDeNascimento,
+        aluno.cpf,
+        aluno.email,
+        aluno.telefone,
+        aluno.turma,
+        aluno.ano,
+        aluno.matricula,
+        aluno.responsavel,
+        aluno.rua,
+        aluno.numero,
+        aluno.cep,
+        aluno.cidade,
+        aluno.bairro
+      );
+      return await this.dao.atualizaDadosAluno(id, atualizaAluno);
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
 }
 
 export default Aluno;
