@@ -49,13 +49,22 @@ const alunoController = (app, bd) => {
     }
   });
 
-  app.delete("/aluno/id:id", async (req, res) => {
-    //usa o parametro de filtro e depois deleta
-    await res.send("foi");
-  });
-  app.put("/aluno/id:id", async (req, res) => {
-    //usa o parametro de filtro e depois atualiza
-    await res.send("foi");
+  app.put("/aluno/id/:id", async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+
+    try {
+      const resposta = await alunoModel.atualizaDadosAluno(body);
+      res.status(201).json({
+        alunos: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.status(400).json({
+        mensagem: error.message,
+        erro: true,
+      });
+    }
   });
 };
 
