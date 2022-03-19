@@ -27,15 +27,28 @@ const alunoController = (app, bd) => {
       });
     } catch (error) {
       res.status(400).json({
-        mensagem: error.mensagem,
+        mensagem: error.message,
         erro: true,
       });
     }
   });
 
   app.post("/aluno", async (req, res) => {
-    //vai receber o corpo da requisição;
+    const body = req.body;
+    try {
+      const resposta = await alunoModel.insereDadosAluno(body);
+      res.status(201).json({
+        alunos: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.status(400).json({
+        mensagem: error.message,
+        erro: true,
+      });
+    }
   });
+
   app.delete("/aluno/id:id", async (req, res) => {
     //usa o parametro de filtro e depois deleta
     await res.send("foi");
