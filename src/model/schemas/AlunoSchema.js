@@ -18,7 +18,7 @@ class AlunoSchema {
     this.nome = nome;
     this.dataDeNascimento = dataDeNascimento;
     this.cpf = this._validaCpf(cpf);
-    this.email = email;
+    this.email = this._validaEmail(email);
     this.telefone = telefone;
     this.turma = turma;
     this.ano = ano;
@@ -38,6 +38,14 @@ class AlunoSchema {
       return resultado;
     } else {
       throw new Error(`cpf fora do padrão ${console.log(resultado)}`);
+    }
+  }
+
+  _validaEmail(email) {
+    if (email.indexOf("@") > 0 && email.indexOf(".com") > email.indexOf("@")) {
+      return email;
+    } else {
+      throw new Error(`email fora do padrão ${console.log(email)}`);
     }
   }
 }
