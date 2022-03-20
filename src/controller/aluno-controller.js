@@ -54,7 +54,7 @@ const alunoController = (app, bd) => {
     const body = req.body;
 
     try {
-      const resposta = await alunoModel.atualizaDadosAluno(body);
+      const resposta = await alunoModel.atualizaDadosAluno(id, body);
       res.status(201).json({
         alunos: resposta,
         erro: false,
