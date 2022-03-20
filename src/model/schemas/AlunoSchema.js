@@ -17,7 +17,7 @@ class AlunoSchema {
   ) {
     this.nome = nome;
     this.dataDeNascimento = dataDeNascimento;
-    this.cpf = cpf;
+    this.cpf = this._validaCpf(cpf);
     this.email = email;
     this.telefone = telefone;
     this.turma = turma;
@@ -29,6 +29,16 @@ class AlunoSchema {
     this.cep = cep;
     this.cidade = cidade;
     this.bairro = bairro;
+  }
+
+  _validaCpf(cpf) {
+    let regex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+    let resultado = regex.test(cpf);
+    if (resultado === true) {
+      return resultado;
+    } else {
+      throw new Error(`cpf fora do padrão ${console.log(resultado)}`);
+    }
   }
 }
 
