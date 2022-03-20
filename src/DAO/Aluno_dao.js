@@ -48,7 +48,7 @@ class AlunoDao {
         novoAluno.cep,
         novoAluno.cidade,
         novoAluno.bairro,
-        (error, rows) => {
+        (error) => {
           if (error) {
             reject(error);
           } else {
@@ -82,9 +82,7 @@ class AlunoDao {
           if (error) {
             reject(error);
           } else {
-            resolve(
-              `Informações do aluno ${aluno.nome} foi atualizadas com sucesso`
-            );
+            resolve(`Informações do aluno foi atualizadas com sucesso`);
           }
         }
       );
