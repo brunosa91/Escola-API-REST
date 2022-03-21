@@ -22,13 +22,13 @@ class AlunoSchema {
     this.telefone = this._validaTelefone(telefone);
     this.turma = this._validaTurma(turma);
     this.ano = this._validaAno(ano);
-    this.matricula = matricula;
-    this.reponsavel = reponsavel;
-    this.rua = rua;
-    this.numero = numero;
+    this.matricula = this._validaMatricula(matricula);
+    this.reponsavel = this._validaResponsavelreponsavel;
+    this.rua = this._verificaRua(rua);
+    this.numero = this._validaNumero(numero);
     this.cep = this._validaCep(cep);
-    this.cidade = cidade;
-    this.bairro = bairro;
+    this.cidade = this._verificaCidade(cidade);
+    this.bairro = this._verificaBairro(bairro);
   }
   _validaNome(nome) {
     if (nome === String) {
@@ -83,11 +83,34 @@ class AlunoSchema {
       throw new Error(`ano inválido ${console.log(resultado)}`);
     }
   }
+  _validaMatricula(matricula) {
+    if (matricula.length === 6) {
+      return matricula;
+    } else {
+      throw new Error(`matricula inválida ${console.log(resultado)}`);
+    }
+  }
+
+  _validaResponsavel(responsavel) {
+    if (responsavel === String) {
+      return responsavel;
+    } else {
+      throw new Error(`responsavel fora do padrão ${console.log(responsavel)}`);
+    }
+  }
+  _verificaRua(rua) {
+    if (rua != "") {
+      return rua;
+    } else {
+      throw new Error(`coloque uma rua ${console.log(rua)}`);
+    }
+  }
+
   _validaNumero(numero) {
     if (numero === Number) {
       return resultado;
     } else {
-      throw new Error(`NUMERO fora do padrão ${console.log(resultado)}`);
+      throw new Error(`NUMERO fora do padrão ${console.log(numero)}`);
     }
   }
 
@@ -98,6 +121,22 @@ class AlunoSchema {
       return resultado;
     } else {
       throw new Error(`cep fora do padrão ${console.log(resultado)}`);
+    }
+  }
+
+  _verificaCidade(cidade) {
+    if (cidade != "") {
+      return cidade;
+    } else {
+      throw new Error(`coloque uma cidade ${console.log(cidade)}`);
+    }
+  }
+
+  _verificaBairro(bairro) {
+    if (bairro != "") {
+      return bairro;
+    } else {
+      throw new Error(`coloque uma rua ${console.log(bairro)}`);
     }
   }
 }
