@@ -15,26 +15,37 @@ class AlunoSchema {
     cidade,
     bairro
   ) {
-    this.nome = _validaNome(nome);
-    this.dataDeNascimento = dataDeNascimento;
+    this.nome = nome;
+    this.dataDeNascimento = this._validaData(dataDeNascimento);
     this.cpf = this._validaCpf(cpf);
     this.email = this._validaEmail(email);
     this.telefone = this._validaTelefone(telefone);
     this.turma = this._validaTurma(turma);
     this.ano = this._validaAno(ano);
     this.matricula = this._validaMatricula(matricula);
-    this.reponsavel = this._validaResponsavelreponsavel;
+    this.responsavel = this._validaResponsavel(reponsavel);
     this.rua = this._verificaRua(rua);
     this.numero = this._validaNumero(numero);
     this.cep = this._validaCep(cep);
     this.cidade = this._verificaCidade(cidade);
     this.bairro = this._verificaBairro(bairro);
   }
-  _validaNome(nome) {
-    if (nome === String) {
+  _validaData(nome) {
+    if (nome != "") {
       return nome;
     } else {
-      throw new Error(`nome fora do padrão ${console.log(nome)}`);
+      throw new Error(`É necessário preencher o campo nome`);
+    }
+  }
+  _validaData(dataDeNascimento) {
+    let regex = /^\d{2}\/\d{2}\/\d{4}$/;
+    let resultado = regex.test(dataDeNascimento);
+    if (resultado === true) {
+      return resultado;
+    } else {
+      throw new Error(
+        `Data de Nascimento fora do padrão, digite números no formato xx/xx/xxxx`
+      );
     }
   }
   _validaCpf(cpf) {
@@ -43,7 +54,9 @@ class AlunoSchema {
     if (resultado === true) {
       return resultado;
     } else {
-      throw new Error(`cpf fora do padrão ${console.log(resultado)}`);
+      throw new Error(
+        `CPF fora do padrão, digite números no formato xxx.xxx.xxx-xx`
+      );
     }
   }
 
@@ -51,7 +64,7 @@ class AlunoSchema {
     if (email.indexOf("@") > 0 && email.indexOf(".com") > email.indexOf("@")) {
       return email;
     } else {
-      throw new Error(`email fora do padrão ${console.log(email)}`);
+      throw new Error(`Email fora do padrão, digite no formato xxxx@xxxxx.com`);
     }
   }
 
@@ -61,16 +74,20 @@ class AlunoSchema {
     if (resultado === true) {
       return resultado;
     } else {
-      throw new Error(`telefone fora do padrão ${console.log(telefone)}`);
+      throw new Error(
+        `Tefone fora do padrão, digite no formato (xx)xxxx-xxxx ou (xx)xxxxx-xxxx,lembrando que no ddd não tem o número 0,números de telefone fixo não iniciam com 1;números de celular tem um dígito a mais que é o número 9.`
+      );
     }
   }
   _validaTurma(turma) {
-    let regex = /(manhã|tarde|noite)/gi;
+    let regex = /(manhã|tarde|noite)/gi; //
     let resultado = regex.test(turma);
     if (resultado === true) {
       return resultado;
     } else {
-      throw new Error(`turma não existe ${console.log(resultado)}`);
+      throw new Error(
+        `turma não existe, por gentileza digitar manhã, tarde ou noite `
+      );
     }
   }
 
@@ -80,37 +97,37 @@ class AlunoSchema {
     if (resultado === true) {
       return resultado;
     } else {
-      throw new Error(`ano inválido ${console.log(resultado)}`);
+      throw new Error(`ano inválido, coloque anos entre 2 e 9`);
     }
   }
   _validaMatricula(matricula) {
     if (matricula.length === 6) {
       return matricula;
     } else {
-      throw new Error(`matricula inválida ${console.log(resultado)}`);
+      throw new Error(`Matrícula inválida, digite exatamente 6 caracteres`);
     }
   }
 
   _validaResponsavel(responsavel) {
-    if (responsavel === String) {
+    if (responsavel != "") {
       return responsavel;
     } else {
-      throw new Error(`responsavel fora do padrão ${console.log(responsavel)}`);
+      throw new Error(`É necessário preencher o campo responsável`);
     }
   }
   _verificaRua(rua) {
     if (rua != "") {
       return rua;
     } else {
-      throw new Error(`coloque uma rua ${console.log(rua)}`);
+      throw new Error(`É necessário preencher o campo rua`);
     }
   }
 
   _validaNumero(numero) {
-    if (numero === Number) {
-      return resultado;
+    if (numero != "") {
+      return numero;
     } else {
-      throw new Error(`NUMERO fora do padrão ${console.log(numero)}`);
+      throw new Error(`É necessário preencher o campo número`);
     }
   }
 
@@ -120,7 +137,9 @@ class AlunoSchema {
     if (resultado === true) {
       return resultado;
     } else {
-      throw new Error(`cep fora do padrão ${console.log(resultado)}`);
+      throw new Error(
+        `CEP fora do padrão, digite números no formato xxxxx-xxx`
+      );
     }
   }
 
@@ -128,7 +147,7 @@ class AlunoSchema {
     if (cidade != "") {
       return cidade;
     } else {
-      throw new Error(`coloque uma cidade ${console.log(cidade)}`);
+      throw new Error(`É necessário preencher o campo cidade`);
     }
   }
 
@@ -136,7 +155,7 @@ class AlunoSchema {
     if (bairro != "") {
       return bairro;
     } else {
-      throw new Error(`coloque uma rua ${console.log(bairro)}`);
+      throw new Error(`É necessário preencher o campo bairro`);
     }
   }
 }
