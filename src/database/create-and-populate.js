@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS "ALUNOS"(
 const ADD_ALUNO_DATA = `
 INSERT INTO ALUNOS (ID, NOME,DATA_DE_NASCIMENTO, CPF, EMAIL, TELEFONE, TURMA, ANO, MATRICULA, RESPONSAVEL, RUA, NUMERO, CEP, CIDADE, BAIRRO)
 VALUES
-(1,'Carlos','16/11/2000','111.111.111-11','carlito@gmail.com','(11)11111-1111','manhã','9','123456','Olavo','napomuceno','123','00000-020','Guarulhos','seródio')
+(1,'Carlos','16/11/2000','111.111.111-11','carlito@gmail.com','(11)11111-1111','manhã','9','123456','Olavo','napomuceno','123','00000-020','Guarulhos','seródio'),
 (2,'Vanessa','16/11/2000','222.222.222-11','vanvan@gmail.com','(11)31111-1111','manhã','6','111111','Maria','Caipora','33','12300-020','Varninho','Forteazul')`;
 
 function criaTabelaAluno() {
