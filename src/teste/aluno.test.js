@@ -14,7 +14,7 @@ describe("GET /aluno", () => {
 describe("GET /aluno/matricula/:matricula", () => {
   test("se o status é 200", () => {
     return request(app)
-      .get("/aluno/matricula/3")
+      .get("/aluno/matricula/151515")
       .then((response) => {
         expect(response.statusCode).toBe(200);
       });
@@ -26,20 +26,20 @@ describe("POST /aluno", () => {
     return request(app)
       .post("/aluno")
       .send({
-        nome: "jean",
-        dataDenascimento: "16/11/2011",
+        nome: "Jean Carlos",
+        dataDeNascimento: "16/11/2011",
         cpf: "111.222.111-44",
-        email: "br@gmail.com",
+        email: "jr@gmail.com",
         telefone: "(11) 2111-1111",
-        turma: "NOITe",
+        turma: "noite",
         ano: "2",
         matricula: "151515",
-        responsavel: "olavo",
-        rua: "guapé",
+        responsavel: "Olavo Dumont",
+        rua: "Guapé",
         numero: "520",
         cep: "08090-050",
-        cidade: "teresina",
-        bairro: "campinho",
+        cidade: "Teresina",
+        bairro: "Campinho",
       })
       .then((response) => {
         expect(response.statusCode).toBe(201);
@@ -51,22 +51,22 @@ describe("POST /aluno", () => {
 describe("PUT /aluno/id", () => {
   test("Se erro for = false", () => {
     return request(app)
-      .put("/aluno/id/5")
+      .put("/aluno/id/2")
       .send({
         nome: "JOÃO",
-        dataDenascimento: "16/11/2011",
+        dataDeNascimento: "16/11/2011",
         cpf: "111.222.111-44",
-        email: "br@gmail.com",
+        email: "jr@gmail.com",
         telefone: "(11) 2111-1111",
-        turma: "NOITe",
+        turma: "noite",
         ano: "2",
         matricula: "151515",
-        responsavel: "olavo",
-        rua: "guapé",
+        responsavel: "Olavo Dumont",
+        rua: "Guapé",
         numero: "520",
         cep: "08090-050",
-        cidade: "teresina",
-        bairro: "campinho",
+        cidade: "Teresina",
+        bairro: "Campinho",
       })
       .then((res) => {
         expect(res.statusCode).toBe(201);
