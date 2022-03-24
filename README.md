@@ -219,7 +219,7 @@ npm start
   }
   ```
 
-- **DELETE /usuario/id/{id}**
+- **DELETE /aluno/id/{id}**
 
   Schema da resposta
 
