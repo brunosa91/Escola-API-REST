@@ -147,27 +147,17 @@ npm start
   Schema da resposta
 
   ```
-  "aluno": [
   {
-  	        "nome":"Jean Carlos",
-  	        "dataDeNascimento": "16/11/2011",
-  	        "cpf" : "459.333.333-22",
-  	        "email":"jj@gmail.com",
-  	        "telefone":"(11) 2151-1111",
-  	        "turma":"tarde",
-  	        "ano":"6 ano",
-  	        "matricula":"151515",
-  	        "responsavel":"Olavo Dumonts",
-  	        "rua":"guararapes",
-  	        "numero":"555",
-  	        "cep":"45450-020",
-  	        "cidade":"Teresina",
-  	        "bairro":"Campinho"
-        },
-      erro: <Boleano>  aluno: [
-
-
+  	"alunos": "Aluno Jean foi registrado com sucesso",
+  	"erro": false
   }
+
+  	{
+  	"mensagem": "mensagem do erro e como corrigir",
+  	"erro": true
+  }
+
+
   ```
 
 - **PUT /aluno/id/{id}**
@@ -196,26 +186,14 @@ npm start
   Schema da resposta
 
   ```
-  "aluno": [
   {
-  	        "nome":"Jean Carlos",
-  	        "dataDeNascimento": "16/11/2011",
-  	        "cpf" : "459.333.333-22",
-  	        "email":"jj@gmail.com",
-  	        "telefone":"(11) 2151-1111",
-  	        "turma":"tarde",
-  	        "ano":"6 ano",
-  	        "matricula":"151515",
-  	        "responsavel":"Olavo Dumonts",
-  	        "rua":"guararapes",
-  	        "numero":"555",
-  	        "cep":"45450-020",
-  	        "cidade":"Teresina",
-  	        "bairro":"Campinho"
-        },
-      erro: <Boleano>  aluno: [
+  	"alunos": "Informações do aluno foi atualizadas com sucesso",
+  	"erro": false
+  }
 
-
+  	{
+  	"mensagem": "mensagem do erro e como corrigir",
+  	"erro": true
   }
   ```
 
