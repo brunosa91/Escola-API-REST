@@ -15,7 +15,7 @@ class AlunoSchema {
     cidade,
     bairro
   ) {
-    this.nome = nome;
+    this.nome = this._validaNome(nome);
     this.dataDeNascimento = this._validaData(dataDeNascimento);
     this.cpf = this._validaCpf(cpf);
     this.email = this._validaEmail(email);
@@ -30,7 +30,7 @@ class AlunoSchema {
     this.cidade = this._verificaCidade(cidade);
     this.bairro = this._verificaBairro(bairro);
   }
-  _validaData(nome) {
+  _validaNome(nome) {
     if (nome != "") {
       return nome;
     } else {
