@@ -1,5 +1,7 @@
 import express from "express";
 
+import indexController from "./controller/index-controller.js";
+
 //importando função alunoController
 
 import alunoController from "./controller/aluno-controller.js";
@@ -18,6 +20,8 @@ const database = db;
 app.use(express.json());
 
 //Chamar aluno controller e passa como parâmetro app
+
+indexController(app);
 
 alunoController(app, database);
 export default app;
