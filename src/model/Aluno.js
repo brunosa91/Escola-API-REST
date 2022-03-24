@@ -76,6 +76,15 @@ class Aluno {
       throw new Error(error.message);
     }
   };
+
+  _IdentificaMatricula = async (matricula) => {
+    const identifica = await this.dao.buscaMatricula(matricula);
+    if (identifica == undefined) {
+      throw new Error(`Não há aluno com a ${matricula} no banco de dados`);
+    }
+
+    return identifica;
+  };
 }
 
 export default Aluno;
