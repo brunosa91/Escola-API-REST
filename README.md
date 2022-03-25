@@ -2,15 +2,15 @@
 
 <img src="./src/assets/escola.jpg">
 
-Projeto de educacional do curso de Web Dev Full Stack da [Resilia Educação](https://www.resilia.com.br/) referente ao Módulo 04.
+Projeto educacional do curso de Web Dev Full Stack da [Resilia Educação](https://www.resilia.com.br/) referente ao Módulo 04.
 
-Link do repositório no Heroku [aqui](https://escola-api-rest.herokuapp.com/).
+Link do deploy no Heroku [aqui](https://escola-api-rest.herokuapp.com/).
 
 Projeto realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/).
 
 ## Objetivo
 
-Esse projeto tem como objetivo criar uma API RESTful de uma ESCOLA, onde será possível aplicar as operações CRUD na entidade `aluno`.
+Esse projeto tem o objetivo de criar uma API RESTful de uma ESCOLA, onde será possível aplicar as operações CRUD na entidade `aluno`.
 
 ## Pré-Requisitos
 
@@ -61,7 +61,7 @@ npm start
 
 - **GET /aluno**
 
-  Schema da resposta segue exemplo da resposta
+  Schema da resposta
 
   ```
   {
@@ -187,11 +187,11 @@ npm start
   	"alunos": "Informações do aluno foi atualizadas com sucesso",
   	"erro": false
   }
+  ```
 
-  	{
-  	"mensagem": "mensagem do erro e como corrigir",
-  	"erro": true
-  }
+  ```
+  	"message": "Não há aluno com o id 5 no banco de dados",
+  	"error": true
   ```
 
 - **DELETE /aluno/id/{id}**
@@ -204,6 +204,9 @@ npm start
   	"message": "Aluno de 3 foi deletado do sistema da escola",
   	"error": false
   }
+  ```
+
+  ```
   {
   	"message": "Não há aluno com o id 5 no banco de dados",
   	"error": true
