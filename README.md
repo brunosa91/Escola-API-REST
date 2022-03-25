@@ -2,7 +2,7 @@
 
 Projeto de educacional do curso de Web Dev Full Stack da [Resilia Educação](https://www.resilia.com.br/) referente ao Módulo 04.
 
-Link do repositório no Heroku [aqui]().
+Link do repositório no Heroku [aqui](https://escola-api-rest.herokuapp.com/).
 
 Projeto realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/).
 
@@ -43,12 +43,6 @@ Instalando os pacotes:
 
 ```
 npm install
-```
-
-Criando o banco de dados:
-
-```
-npm run create
 ```
 
 Iniciando o servidor:
