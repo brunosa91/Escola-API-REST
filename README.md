@@ -203,8 +203,8 @@ npm start
 
   ```
   {
-      mensagem: <String>
-      erro: <Boleano>
+      message: <String>
+      error: <Boleano>
   }
   ```
 
