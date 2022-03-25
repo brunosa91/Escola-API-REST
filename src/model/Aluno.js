@@ -16,7 +16,14 @@ class Aluno {
 
   buscaMatricula = async (matricula) => {
     try {
-      return await this.dao.buscaMatricula(matricula);
+      const identifica = await this.dao.buscaMatricula(matricula);
+      if (identifica.length != 0) {
+        return identifica;
+      } else {
+        throw new Error(
+          `Não há aluno com a matrícula ${matricula} no banco de dados`
+        );
+      }
     } catch (error) {
       throw new Error(error.message);
     }
@@ -48,6 +55,7 @@ class Aluno {
 
   atualizaDadosAluno = async (id, aluno) => {
     try {
+      await this.verificandoId(id);
       const atualizaAluno = new AlunoSchema(
         aluno.nome,
         aluno.dataDeNascimento,
@@ -64,6 +72,7 @@ class Aluno {
         aluno.cidade,
         aluno.bairro
       );
+
       return await this.dao.atualizaDadosAluno(id, atualizaAluno);
     } catch (error) {
       throw new Error(error.message);
@@ -71,19 +80,20 @@ class Aluno {
   };
   deletaAluno = async (id) => {
     try {
+      await this.verificandoId(id);
       return await this.dao.deletaAluno(id);
     } catch (error) {
       throw new Error(error.message);
     }
   };
 
-  _IdentificaMatricula = async (matricula) => {
-    const identifica = await this.dao.buscaMatricula(matricula);
-    if (identifica == undefined) {
-      throw new Error(`Não há aluno com a ${matricula} no banco de dados`);
+  verificandoId = async (id) => {
+    const verifica = await this.dao.verificaId(id);
+    if (verifica.length != 0) {
+      return verifica;
+    } else {
+      throw new Error(`Não há aluno com o id ${id} no banco de dados`);
     }
-
-    return identifica;
   };
 }
 

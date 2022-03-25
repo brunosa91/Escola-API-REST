@@ -41,7 +41,7 @@ class AlunoSchema {
     let regex = /^\d{2}\/\d{2}\/\d{4}$/;
     let resultado = regex.test(dataDeNascimento);
     if (resultado === true) {
-      return resultado;
+      return dataDeNascimento;
     } else {
       throw new Error(
         `Data de Nascimento fora do padrão, digite números no formato xx/xx/xxxx`
@@ -52,7 +52,7 @@ class AlunoSchema {
     let regex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
     let resultado = regex.test(cpf);
     if (resultado === true) {
-      return resultado;
+      return cpf;
     } else {
       throw new Error(
         `CPF fora do padrão, digite números no formato xxx.xxx.xxx-xx`
@@ -72,7 +72,7 @@ class AlunoSchema {
     let regex = /^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/;
     let resultado = regex.test(telefone);
     if (resultado === true) {
-      return resultado;
+      return telefone;
     } else {
       throw new Error(
         `Tefone fora do padrão, digite no formato (xx)xxxx-xxxx ou (xx)xxxxx-xxxx,lembrando que no ddd não tem o número 0,números de telefone fixo não iniciam com 1;números de celular tem um dígito a mais que é o número 9.`
@@ -83,7 +83,7 @@ class AlunoSchema {
     let regex = /(manhã|tarde|noite)/gi; //
     let resultado = regex.test(turma);
     if (resultado === true) {
-      return resultado;
+      return turma;
     } else {
       throw new Error(
         `turma não existe, por gentileza digitar manhã, tarde ou noite `
@@ -95,7 +95,7 @@ class AlunoSchema {
     let regex = /[2-9]/;
     let resultado = regex.test(ano);
     if (resultado === true) {
-      return resultado;
+      return ano;
     } else {
       throw new Error(`ano inválido, coloque anos entre 2 e 9`);
     }
@@ -135,7 +135,7 @@ class AlunoSchema {
     let regex = /\d{5}-\d{3}$/gi;
     let resultado = regex.test(cep);
     if (resultado === true) {
-      return resultado;
+      return cep;
     } else {
       throw new Error(
         `CEP fora do padrão, digite números no formato xxxxx-xxx`
