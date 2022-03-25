@@ -1,5 +1,7 @@
 # API ESCOLA- MERCÚRIO - Resilia
 
+<img src="./src/assets/escola.jpg">
+
 Projeto de educacional do curso de Web Dev Full Stack da [Resilia Educação](https://www.resilia.com.br/) referente ao Módulo 04.
 
 Link do repositório no Heroku [aqui](https://escola-api-rest.herokuapp.com/).
@@ -65,20 +67,21 @@ npm start
   {
       usuarios: [
           {
-  	        "nome":"Jean Carlos",
-  	        "dataDeNascimento": "16/11/2011",
-  	        "cpf" : "459.333.333-22",
-  	        "email":"jj@gmail.com",
-  	        "telefone":"(11) 2151-1111",
-  	        "turma":"tarde",
-  	        "ano":"6 ano",
-  	        "matricula":"151515",
-  	        "responsavel":"Olavo Dumonts",
-  	        "rua":"guararapes",
-  	        "numero":"555",
-  	        "cep":"45450-020",
-  	        "cidade":"Teresina",
-  	        "bairro":"Campinho"
+  	        "ID": 1,
+  		      "NOME": "Carlos",
+  		      "DATA_DE_NASCIMENTO": "16/11/2000",
+  		      "CPF": "111.111.111-11",
+  		      "EMAIL": "carlito@gmail.com",
+  		      "TELEFONE": "(11)11111-1111",
+  		      "TURMA": "manhã",
+  		      "ANO": "9",
+  		      "MATRICULA": "123456",
+  		      "RESPONSAVEL": "Olavo",
+  		      "RUA": "napomuceno",
+  		      "NUMERO": "123",
+  		      "CEP": "00000-020",
+  		      "CIDADE": "Guarulhos",
+  		      "BAIRRO": "seródio"
         }
 
       erro: <Boleano>
@@ -197,8 +200,14 @@ npm start
 
   ```
   {
-      message: <String>
-      error: <Boleano>
+    {
+  	"message": "Aluno de 3 foi deletado do sistema da escola",
+  	"error": false
+  }
+  {
+  	"message": "Não há aluno com o id 5 no banco de dados",
+  	"error": true
+  }
   }
   ```
 
