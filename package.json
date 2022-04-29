@@ -22,6 +22,7 @@
   "homepage": "https://github.com/brunosa91/Escola-API-REST#readme",
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "sqlite3": "^5.0.0"
   },

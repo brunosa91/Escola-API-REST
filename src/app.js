@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import indexController from "./controller/index-controller.js";
 
@@ -12,6 +13,7 @@ import db from "./database/sqlite-db.js";
 
 // instanciando meu express
 const app = express();
+app.use(cors());
 
 //instanciando database
 
